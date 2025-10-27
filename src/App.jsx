@@ -4,7 +4,7 @@ import FeaturedNews from "./components/FeaturedNews";
 import NewsCard from "./components/NewsCard";
 import Footer from "./components/Footer";
 
-const API_KEY = "85a5bd029a4f410c8f62b22f7f15cb16"; // Replace with your NewsAPI key
+const API_KEY = "85a5bd029a4f410c8f62b22f7f15cb16"; // your NewsAPI key
 
 export default function App() {
   const [category, setCategory] = useState("general");
@@ -13,16 +13,23 @@ export default function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=10&apiKey=${API_KEY}`
-    )
+
+    // ✅ Detect environment
+    const isLocal = import.meta.env.DEV;
+
+    // ✅ Correct URL depending on environment
+    const url = isLocal
+      ? `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=10&apiKey=${API_KEY}`
+      : `/api/news?category=${category}`;
+
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setArticles(data.articles || []);
         setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        console.error("Error fetching news:", err);
         setLoading(false);
       });
   }, [category]);
