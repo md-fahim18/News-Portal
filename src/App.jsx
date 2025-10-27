@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import FeaturedNews from "./components/FeaturedNews";
 import NewsCard from "./components/NewsCard";
 import Footer from "./components/Footer";
