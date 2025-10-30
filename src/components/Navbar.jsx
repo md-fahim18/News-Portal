@@ -18,7 +18,11 @@ export default function Navbar({ currentCategory, setCategory }) {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-red-600">News Portal Global</h1>
+        <a href="#" className="hover:text-red-500 transition">
+          <h1 className="text-2xl font-bold text-red-600">
+            News Portal Global
+          </h1>
+        </a>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-4">
