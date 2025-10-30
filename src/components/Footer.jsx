@@ -7,7 +7,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-b border-gray-700 pb-8">
         {/* About Section */}
         <div>
-          <h2 className="text-lg font-bold text-white mb-3">About BBC News</h2>
+          <h2 className="text-lg font-bold text-white mb-3">
+            About News Portal Global
+          </h2>
           <p className="text-sm leading-relaxed">
             Your trusted source for breaking news, insightful analysis, and
             global coverage powered by real-time data.
